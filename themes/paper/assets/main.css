@@ -993,7 +993,7 @@ article header h1 {
   margin: 0 3px;
   /* color: #dddddd;
   opacity: 0.6; */
-  /* color: #a6e22e; */
+  color: #a6e22e;
 }
 
 pre code {
@@ -1262,7 +1262,7 @@ pre code {
   padding-right: 0.5714286em;
   padding-bottom: 0.5714286em;
   padding-left: 0.5714286em;
-  text-align: center;
+  text-align: left;
 }
 
 .prose :where(tbody td:first-child, tfoot td:first-child):not(:where([class~='not-prose'] *)) {
