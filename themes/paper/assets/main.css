@@ -982,6 +982,14 @@ article header h1 {
   background-size: 90% 90%;
 }
 
+main {
+  word-wrap: break-word;
+}
+
+table {
+  table-layout: fixed!important;
+}
+
 .book__list:hover {
   left: 0;
   transition: all 0.5s;
@@ -1120,7 +1128,7 @@ pre code {
   font-weight: 600;
   color: var(--tw-prose-headings);
   vertical-align: bottom;
-  text-align: center;
+  text-align: left;
 }
 
 .prose :where(tbody tr):not(:where([class~='not-prose'] *)) {
