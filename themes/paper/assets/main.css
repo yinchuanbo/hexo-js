@@ -156,7 +156,7 @@ article section .search button svg {
 
 html {
   /* 3 */
-  font-family: 'Fira Code','Microsoft YaHei', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  font-family: 'Hack','Microsoft YaHei', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
   line-height: 1.5;
@@ -244,7 +244,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: 'Fira Code', 'Microsoft YaHei', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+  font-family: 'Hack', 'Microsoft YaHei', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
     'Courier New', monospace;
   /* 1 */
   font-size: 1em;
@@ -529,7 +529,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
 img,
 video {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
 }
 
@@ -544,7 +544,8 @@ html {
 
 body {
   -webkit-tap-highlight-color: transparent;
-  background-color: rgb(96, 108, 93);
+  /* background-color: rgb(53, 80, 130); */
+  background-color: #829460;
 }
 
 *,
@@ -780,12 +781,14 @@ body {
 .prose :where(ol > li):not(:where([class~='not-prose'] *))::marker {
   font-weight: 400;
   /* color: var(--tw-prose-counters); */
-  color: #e8e8e8
+  /* color: #e8e8e8 */
+  color: #f4f497;
 }
 
 .prose :where(ul > li):not(:where([class~='not-prose'] *))::marker {
   /* color: var(--tw-prose-bullets); */
-  color: #e8e8e8
+  /* color: #e8e8e8 */
+  color: #f4f497;
 }
 
 .prose :where(hr):not(:where([class~='not-prose'] *)) {
@@ -799,11 +802,11 @@ body {
   padding-left: 1em;
   margin-top: 1.6em;
   margin-bottom: 1.6em;
-  font-style: italic;
+  font-style: italic;                                                                   
   font-weight: 500;
   color: var(--tw-prose-quotes);
   quotes: '\201C''\201D''\2018''\2019';
-  border-left-color: #d4d4d4;
+  border-left-color: #f4f497;
   border-left-width: 0.25rem;
 }
 
@@ -1005,11 +1008,13 @@ table {
   margin: 0 3px;
   /* color: #dddddd;
   opacity: 0.6; */
-  color: #a6e22e;
+  /* color: #a6e22e; */
+  color: #fc9ed6;
+  font-style: italic;
 }
 
 pre code {
-  font-family: 'Fira Code';
+  font-family: 'Hack';
 }
 
 
@@ -1075,7 +1080,6 @@ pre code {
   box-shadow: var(--clay-shadow-outset, 8px 8px 16px 0 rgba(0, 0, 0, 25%)),
     inset var(--clay-shadow-inset-primary, -8px -8px 16px 0 rgba(0, 0, 0, 25%)),
     inset var(--clay-shadow-inset-secondary, 8px 8px 16px 0 hsla(0deg, 0%, 100%, 20%)) !important; */
-  box-shadow: none;
   border: 0;
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
@@ -2072,7 +2076,7 @@ pre code {
 }
 
 article {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   line-height: 1.75rem;
   line-height: 1.9;
   --tw-text-opacity: 1;
