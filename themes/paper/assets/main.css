@@ -55,7 +55,7 @@ article:has(.search) header.mb-10 h1 {
 }
 
 span[style="color:#75715e"] {
-  color: #ccc!important;
+  color: #999!important;
 }
 
 span[style="color:#960050;background-color:#1e0010"] {
@@ -176,8 +176,8 @@ html {
 body {
   margin: 0;
   line-height: inherit;
-  background-color: #829460;
-background-image: url("https://www.transparenttextures.com/patterns/skulls.png");
+  background-color: #004225;
+background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
