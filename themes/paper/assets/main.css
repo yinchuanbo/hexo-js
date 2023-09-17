@@ -913,6 +913,12 @@ body>header {
   margin-bottom: 5em;
 }
 
+@media screen and (max-width: 768px) {
+  body>header {
+    margin-bottom: 3em;
+  }
+}
+
 article header h1 {
   font-size: 1.6em!important;
   /* text-shadow: rgb(255 255 255 / 40%) 5px 5px; */
@@ -1738,6 +1744,12 @@ pre code {
 
 .min-h-\[calc\(100\%-10rem\)\] {
   min-height: calc(100% - 16rem);
+}
+
+@media screen and (max-width: 768px) {
+  .min-h-\[calc\(100\%-10rem\)\] {
+    min-height: calc(100% - 14rem);
+  }
 }
 
 .w-14 {
