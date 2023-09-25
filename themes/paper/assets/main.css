@@ -176,8 +176,8 @@ html {
 body {
   margin: 0;
   line-height: inherit;
-  background-color: #7A9D54;
-  /* background-image: url("https://www.transparenttextures.com/patterns/wavecut.png"); */
+  background-color: #374259;
+  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
 }
 
 /*
@@ -1013,7 +1013,7 @@ table {
   /* color: #dddddd;
   opacity: 0.6; */
   /* color: #a6e22e; */
-  color: #fc9ed6;
+  color: #1890ff;
   font-style: italic;
 }
 
@@ -1074,7 +1074,7 @@ pre code {
   line-height: 1.7142857;
   color: var(--tw-prose-pre-code);
   border-radius: 40px / 15px!important;
-  background-color: #4d870e !important;
+  background-color: #374259!important;
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
   /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
   /* background: var(--clay-background, rgba(0, 0, 0, 0.5%)) !important; */
