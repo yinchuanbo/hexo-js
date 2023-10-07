@@ -839,7 +839,7 @@ html {
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3333333;
   color: var(--tw-prose-headings);
 }
@@ -1016,7 +1016,7 @@ table {
   /* color: #dddddd;
   opacity: 0.6; */
   /* color: #a6e22e; */
-  color: #ff0000;
+  color: #f92672;
   font-style: italic;
 }
 
