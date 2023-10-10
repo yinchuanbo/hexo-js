@@ -190,16 +190,9 @@ body {
   position: absolute;
   inset: 0;
   z-index: 10;
-  filter:blur(300px);
-  -webkit-filter:blur(300px);
-  background-color: #878c00;
+  background-color: #22267B;
+  background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
 }
-
-/*
-1. Add the correct height in Firefox.
-2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
-3. Ensure horizontal rules are visible by default.
-*/
 
 hr {
   height: 0;
