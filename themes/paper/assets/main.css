@@ -181,7 +181,7 @@ body {
   position: relative;
   min-height: 100vh;
   height: max-content!important;
-  background-color: rgba(16,104,60, 0.65);
+  background-color: #388E3C;
 }
 
 hr {
