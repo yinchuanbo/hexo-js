@@ -20,7 +20,7 @@
 }
 
 :root {
-  --font-family: 'Fira Code'
+  --font-family: 'hack'
 }
 
 /* 滚动槽 */
@@ -170,8 +170,9 @@ body {
   position: relative;
   min-height: 100vh;
   height: max-content!important;
-  background-color: #748E63;
-  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+  background-color: #181938;
+background-image: url("https://www.transparenttextures.com/patterns/basketball.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 /* .top__header {
@@ -1809,7 +1810,8 @@ table {
 }
 
 .max-w-3xl {
-  max-width: 48rem;
+  /* max-width: 48rem; */
+  max-width: 52rem;
 }
 
 .shrink-0 {
