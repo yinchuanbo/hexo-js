@@ -11,7 +11,7 @@ theme = "paper"
 features = ["blog"]
 
 [params]
-  color = 'light'
+  color = 'dark'
   avatar = '/imgs/logo.jpg'
   name = 'Yin灏'
   bio = 'If time could turn back...'
