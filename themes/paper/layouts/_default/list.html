@@ -19,7 +19,7 @@
 
 {{ $avatar_url := $.Scratch.Get "avatar_url" }}<!---->
 {{ if or $avatar_url site.Params.name }}
-<div class="-mt-4 mb-20 flex items-start" style="margin: 0;margin-bottom: 3rem;display: none;">
+<div class="-mt-4 mb-20 flex items-start" style="display: none;">
   {{ if $avatar_url }}
   <div
     class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow-xl dark:bg-white/80"
@@ -44,21 +44,21 @@
 {{ end }}
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
-  <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
-  <time class="text-sm opacity-60">{{ .Date | time.Format ":date_medium" }}</time>
-  <a class="absolute inset-0" href="{{ .Permalink }}"></a>
+  <a class="title__a" href="{{ .Permalink }}"><h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2></a>
+  <time class="text-sm opacity-60 home__time">{{ .Date | time.Format ":date_medium" }}</time>
+  <!-- <a class="absolute inset-0" href="{{ .Permalink }}"></a> -->
 </section>
 {{ end }}
 
 <!-- Main Nav -->
 {{ if gt $paginator.TotalPages 1 }}
-<nav class="flex" style="margin-top: 3rem;">
+<nav class="flex">
 <!-- <nav class="mt-24 flex" style="margin-top: 3rem;"> -->
   {{ if $paginator.HasPrev }}
-  <a class="btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+  <a class="btn prev_btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
   {{ end }}<!---->
   {{ if $paginator.HasNext }}
-  <a class="btn ml-auto" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+  <a class="btn ml-auto next_btn" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
   {{ end }}
 </nav>
 {{ end }}<!---->
