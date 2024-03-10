@@ -1,6 +1,7 @@
-@import 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css';
+/* @import 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css';
 @import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 * {
   padding: 0;
@@ -9,8 +10,8 @@
 }
 
 :root {
-  --pre-ff: hack, "Fira Code";
-  --nor-ff: Poppins, 'Microsoft YaHei UI';
+  --pre-ff: "Josefin Sans", hack, "Fira Code";
+  --nor-ff: "Josefin Sans", Poppins, 'Microsoft YaHei UI';
   --main-color: #3583fb;
 }
 
@@ -29,7 +30,7 @@ body {
   padding: 20px;
   font-size: 16px;
   line-height: 1.8;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .highlight pre code {
@@ -49,12 +50,13 @@ article p {
 
 h1,h2, h3, h4, h5, h6 {
   font-family: var(--nor-ff);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 article header h1 {
   font-size: 25px;
   font-weight: 600;
+  text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
 }
 
 body article header {
@@ -136,12 +138,14 @@ body header {
 
 body main {
   max-width: 1000px;
-  border: 1px solid rgb(229, 229, 229);
+  min-height: calc(100vh - 40px);
+  /* border: 2px solid var(--main-color); */
   background-color: #fff;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
 ul, ol {
@@ -157,7 +161,16 @@ ul > li {
 
 
 ol {
-  list-style: decimal inside;
+  list-style: decimal;
+}
+
+ol > li {
+  margin-left: 15px;
+}
+
+ol > li::marker {
+  color: var(--main-color);
+  float: left;
 }
 
 ul > li + li {
@@ -187,7 +200,7 @@ ul > li::before {
 }
 
 .mt-24 {
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 p code {
@@ -207,7 +220,7 @@ td, tr, th {
   font-size: 16px!important;
   font-family: var(--nor-ff);
   border: 1px solid #e5e5e5;
-  padding: 5px 10px;
+  padding: 8px 10px;
   border-right: 0;
   border-bottom: 0;
   text-align: left;
@@ -326,5 +339,25 @@ img {
 }
 
 .title__a h2 {
-  font-size: 22px;
+  font-size: 18px;
+}
+
+blockquote {
+  position: relative;
+  padding: 20px 0 5px 0;
+  padding-left: 15px;
+  border-top: 1px dashed var(--main-color);
+  border-right: 1px dashed var(--main-color);;
+  border-bottom: 1px dashed var(--main-color);
+  margin-bottom: 15px;
+}
+
+blockquote::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 5px;
+  height: calc(100% + 2px);
+  background-color: var(--main-color);
 }
