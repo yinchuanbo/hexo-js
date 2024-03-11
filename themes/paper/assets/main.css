@@ -362,3 +362,16 @@ blockquote::before {
   height: calc(100% + 2px);
   background-color: var(--main-color);
 }
+
+@media (max-width: 767px) {
+  body {
+    padding: 10px;
+  }
+  body main {
+    max-width: 100%;
+    padding: 0;
+    box-shadow: none;
+    background-color: initial;
+    overflow: hidden;
+  }
+}
