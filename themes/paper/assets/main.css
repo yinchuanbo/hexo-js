@@ -23,7 +23,8 @@ html, body {
 }
 
 body {
-  background-color: rgb(243, 243, 243);
+  /* background-color: rgb(243, 243, 243); */
+  background-color: var(--main-color);
   padding: 20px 0;
 }
 
@@ -283,6 +284,7 @@ article nav a .ml-1\.5 {
 .title__a:hover {
   color: var(--main-color);
   transition: all 0.5s;
+  padding-left: 10px;
 }
 
 p strong {
