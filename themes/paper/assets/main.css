@@ -1,16 +1,23 @@
 @import 'https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css';
 @import 'https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap';
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Maven+Pro:wght@400..900&family=Noto+Serif+SC&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Syncopate:wght@400;700&family=ZCOOL+KuaiLe&family=ZCOOL+XiaoWei&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('/fonts/myfont.ttf') format('truetype');
+}
+
 :root {
-  --pre-ff: "hack","Fira Code";
-  --nor-ff: hack, 'Microsoft YaHei UI';
+  --pre-ff: MyFont, hack, "Fira Code";
+  --nor-ff: "MyFont", hack, "Fira Code", 'Microsoft YaHei UI';
   --main-color: #3583fb;
+  --font-size: 18px;
 }
 
 
@@ -22,7 +29,8 @@ html, body {
 
 body {
   /* background-color: rgb(243, 243, 243); */
-  background-color: var(--main-color);
+  /* background-color: var(--main-color); */
+  background-color: #DCE3E6;
   padding: 20px 0;
 }
 
@@ -32,11 +40,11 @@ body {
 
 .highlight pre {
   padding: 20px;
-  font-size: 16px;
+  font-size: var(--font-size);
   line-height: 1.8;
-  border-radius: 5px;
-  /* background-color: #102C57!important; */
+  border-radius: 10px;
   overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 }
 
 .highlight pre code {
@@ -48,7 +56,7 @@ article p, .highlight  {
 }
 
 article p {
-  font-size: 16px;
+  font-size: var(--font-size);
   line-height: 1.8;
   letter-spacing: .5px;
   font-family: var(--nor-ff)!important;
@@ -60,9 +68,9 @@ h1,h2, h3, h4, h5, h6 {
 }
 
 article header h1 {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 600;
-  /* text-shadow: 4px 4px 2px rgba(0,0,0,0.6); */
+  text-shadow:2px 2px 5px #333333;
 }
 
 body article header {
@@ -73,7 +81,7 @@ body article header {
 
 article header time, article header span, section time, li {
   font-family: var(--nor-ff);
-  font-size: 16px;
+  font-size: var(--font-size);
 }
 
 .text-sm {
@@ -89,46 +97,25 @@ article header time, article header span, section time, li {
 }
 
 article h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 25px;
+  margin-bottom: 15px;
   position: relative;
 }
 
 /* article h2::before {
   content: "H2";
   position: absolute;
-  top: 0;
-  left: -17px;
-  color: #fff;
-  font-size: 10px;
-  border: 1px solid var(--main-color);
-  border-radius: 100%;
-  background-color: var(--main-color);
-  padding: 0 1px;
+  top: 30%;
+  left: -20px;
+  color: var(--main-color);
+  font-size: 12px;
+  font-family: var(--nor-ff);
 } */
 
 article h3 {
-  font-size: 19px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 15px;
   position: relative;
-}
-/* 
-article h3::before {
-  content: "H3";
-  position: absolute;
-  top: 0;
-  left: -17px;
-  color: #fff;
-  font-size: 10px;
-  border: 1px solid var(--main-color);
-  border-radius: 100%;
-  background-color: var(--main-color);
-  padding: 0 1px;
-} */
-
-article h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
 }
 
 .top__header {
@@ -145,12 +132,11 @@ body header {
 body main {
   max-width: 1000px;
   min-height: calc(100vh - 40px);
-  /* border: 2px solid var(--main-color); */
   background-color: #fff;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 30px;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
@@ -171,7 +157,7 @@ ol {
 }
 
 ol > li {
-  margin-left: 15px;
+  margin-left: 30px;
 }
 
 ol > li::marker {
@@ -210,7 +196,7 @@ ul > li::before {
 }
 
 p code {
-  font-size: 16px!important;
+  font-size: var(--font-size)!important;
   color: var(--main-color)!important;
   font-family: var(--nor-ff);
 }
@@ -223,7 +209,7 @@ table {
 }
 
 td, tr, th {
-  font-size: 16px!important;
+  font-size: var(--font-size)!important;
   font-family: var(--nor-ff);
   border: 1px solid #e5e5e5;
   padding: 8px 10px;
@@ -345,18 +331,27 @@ img {
   background-position: center;
 }
 
+.title__a {
+  margin-bottom: 5px;
+}
+
 .title__a h2 {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 blockquote {
   position: relative;
-  padding: 20px 0 5px 0;
+  padding: 15px 10px;
   padding-left: 15px;
   border-top: 1px dashed var(--main-color);
   border-right: 1px dashed var(--main-color);;
   border-bottom: 1px dashed var(--main-color);
   margin-bottom: 15px;
+  background-color: aliceblue;
+}
+
+blockquote p {
+  margin-bottom: 0!important;
 }
 
 blockquote::before {
