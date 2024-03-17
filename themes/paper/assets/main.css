@@ -157,7 +157,7 @@ ol {
 }
 
 ol > li {
-  margin-left: 30px;
+  margin-left: 22px;
 }
 
 ol > li::marker {
@@ -172,12 +172,13 @@ ul > li + li {
 ul > li::before {
   content: "";
   position: absolute;
-  top: 10px;
+  top: 50%;
   left: 0;
   width: 7px;
   height: 7px;
   background-color: var(--main-color);
   border-radius: 100%;
+  margin-top: -1px;
 }
 
 .flex {
@@ -234,6 +235,7 @@ article nav a, .prev_btn, .next_btn {
   font-family: var(--nor-ff);
   border: 2px solid var(--main-color);
   transition: all .5s;
+  font-size: 1rem;
 }
 
 article nav a:hover, .prev_btn:hover, .next_btn:hover {
@@ -290,6 +292,7 @@ img {
   display: block;
   margin: 0 auto;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 .img__mask {
