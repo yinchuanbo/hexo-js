@@ -42,9 +42,10 @@ body {
   padding: 20px;
   font-size: var(--font-size);
   line-height: 1.8;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  background-color: #211951!important;
 }
 
 .highlight pre code {
@@ -70,7 +71,7 @@ h1,h2, h3, h4, h5, h6 {
 article header h1 {
   font-size: 30px;
   font-weight: 600;
-  text-shadow:2px 2px 5px #333333;
+  text-shadow:2px 2px 5px #211951;
 }
 
 body article header {
@@ -235,7 +236,7 @@ article nav a, .prev_btn, .next_btn {
   font-family: var(--nor-ff);
   border: 2px solid var(--main-color);
   transition: all .5s;
-  font-size: 1rem;
+  font-size: 16px;
 }
 
 article nav a:hover, .prev_btn:hover, .next_btn:hover {
@@ -339,16 +340,16 @@ img {
 }
 
 .title__a h2 {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 blockquote {
   position: relative;
   padding: 15px 10px;
   padding-left: 15px;
-  border-top: 1px dashed var(--main-color);
+  /* border-top: 1px dashed var(--main-color);
   border-right: 1px dashed var(--main-color);;
-  border-bottom: 1px dashed var(--main-color);
+  border-bottom: 1px dashed var(--main-color); */
   margin-bottom: 15px;
   background-color: aliceblue;
 }
