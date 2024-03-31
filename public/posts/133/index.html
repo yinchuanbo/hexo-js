@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>构造函数、原型和继承 - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="构造函数 定义构造函数 构造函数两个显著特点：
+函数体内使用 this，引用将要生成的实例对象。
+必须使用 new 命令调用函数，生成实例对象。" />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="构造函数、原型和继承" />
+<meta property="og:description" content="构造函数 定义构造函数 构造函数两个显著特点：
+函数体内使用 this，引用将要生成的实例对象。
+必须使用 new 命令调用函数，生成实例对象。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/133/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-03-31T08:54:55+08:00" />
+<meta property="article:modified_time" content="2024-03-31T08:54:55+08:00" />
+
+  
+  <meta itemprop="name" content="构造函数、原型和继承">
+<meta itemprop="description" content="构造函数 定义构造函数 构造函数两个显著特点：
+函数体内使用 this，引用将要生成的实例对象。
+必须使用 new 命令调用函数，生成实例对象。"><meta itemprop="datePublished" content="2024-03-31T08:54:55+08:00" />
+<meta itemprop="dateModified" content="2024-03-31T08:54:55+08:00" />
+<meta itemprop="wordCount" content="8">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="构造函数、原型和继承"/>
+<meta name="twitter:description" content="构造函数 定义构造函数 构造函数两个显著特点：
+函数体内使用 this，引用将要生成的实例对象。
+必须使用 new 命令调用函数，生成实例对象。"/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      构造函数、原型和继承
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Mar 31, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><h2 id="构造函数">构造函数</h2>
+<h3 id="定义构造函数">定义构造函数</h3>
+<p><strong>构造函数两个显著特点：</strong></p>
+<ol>
+<li>
+<p>函数体内使用 this，引用将要生成的实例对象。</p>
+</li>
+<li>
+<p>必须使用 new 命令调用函数，生成实例对象。</p>
+</li>
+</ol>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/132/"
+      ><span>使用对象</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

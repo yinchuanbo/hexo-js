@@ -40,9 +40,10 @@ body {
 
 .highlight pre {
   padding: 20px;
-  font-size: var(--font-size);
+  padding-top: 12px;
+  font-size: 20px;
   line-height: 1.8;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
   background-color: #211951!important;

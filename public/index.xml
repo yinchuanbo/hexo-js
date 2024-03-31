@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 25 Mar 2024 21:53:45 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Mar 2024 08:54:55 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>构造函数、原型和继承</title>
+      <link>/posts/133/</link>
+      <pubDate>Sun, 31 Mar 2024 08:54:55 +0800</pubDate>
+      
+      <guid>/posts/133/</guid>
+      <description>构造函数 定义构造函数 构造函数两个显著特点：
+函数体内使用 this，引用将要生成的实例对象。
+必须使用 new 命令调用函数，生成实例对象。</description>
+    </item>
+    
     <item>
       <title>使用对象</title>
       <link>/posts/132/</link>
