@@ -31,6 +31,7 @@ body {
   /* background-color: rgb(243, 243, 243); */
   /* background-color: var(--main-color); */
   background-color: #DCE3E6;
+  /* background-color: #f5f5f5; */
   padding: 20px 0;
 }
 
@@ -41,12 +42,12 @@ body {
 .highlight pre {
   padding: 20px;
   padding-top: 12px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.8;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   overflow: auto;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-  background-color: #211951!important;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  background-color: #211951!important; */
 }
 
 .highlight pre code {
@@ -72,7 +73,7 @@ h1,h2, h3, h4, h5, h6 {
 article header h1 {
   font-size: 30px;
   font-weight: 600;
-  text-shadow:2px 2px 5px #211951;
+  /* text-shadow:2px 2px 5px #211951; */
 }
 
 body article header {

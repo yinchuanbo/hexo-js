@@ -45,9 +45,9 @@
   
   <meta name="theme-color" />
   
-  <meta name="description" content="构造函数 定义构造函数 构造函数两个显著特点：
-函数体内使用 this，引用将要生成的实例对象。
-必须使用 new 命令调用函数，生成实例对象。" />
+  <meta name="description" content="构造函数 调用构造函数 function Point(x, y) { this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } var p1 = new Point(100, 200); var p2 = new Point(300, 400); console.log(p1.x); console.log(p2.x); console.log(p1.sum()); console.log(p2.sum()); 如果不使用 new 命令，直接使用小括号调用构造函数，这时构造函数就是普通函数，不会生成实例对象。this 就代表调用函数的对象，在客户端指代全局对象 window。
+为了避免误用，最有效的方法是在函数中启用严格模式。
+function Point(x, y) { &#34;use strict&#34;; this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } 这样调用构造函数时，必须使用 new 命令，否则将抛出异常。" />
   <meta name="author" content="" />
   
 
@@ -100,9 +100,9 @@
   
   
   <meta property="og:title" content="构造函数、原型和继承" />
-<meta property="og:description" content="构造函数 定义构造函数 构造函数两个显著特点：
-函数体内使用 this，引用将要生成的实例对象。
-必须使用 new 命令调用函数，生成实例对象。" />
+<meta property="og:description" content="构造函数 调用构造函数 function Point(x, y) { this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } var p1 = new Point(100, 200); var p2 = new Point(300, 400); console.log(p1.x); console.log(p2.x); console.log(p1.sum()); console.log(p2.sum()); 如果不使用 new 命令，直接使用小括号调用构造函数，这时构造函数就是普通函数，不会生成实例对象。this 就代表调用函数的对象，在客户端指代全局对象 window。
+为了避免误用，最有效的方法是在函数中启用严格模式。
+function Point(x, y) { &#34;use strict&#34;; this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } 这样调用构造函数时，必须使用 new 命令，否则将抛出异常。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/posts/133/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-03-31T08:54:55+08:00" />
@@ -110,18 +110,18 @@
 
   
   <meta itemprop="name" content="构造函数、原型和继承">
-<meta itemprop="description" content="构造函数 定义构造函数 构造函数两个显著特点：
-函数体内使用 this，引用将要生成的实例对象。
-必须使用 new 命令调用函数，生成实例对象。"><meta itemprop="datePublished" content="2024-03-31T08:54:55+08:00" />
+<meta itemprop="description" content="构造函数 调用构造函数 function Point(x, y) { this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } var p1 = new Point(100, 200); var p2 = new Point(300, 400); console.log(p1.x); console.log(p2.x); console.log(p1.sum()); console.log(p2.sum()); 如果不使用 new 命令，直接使用小括号调用构造函数，这时构造函数就是普通函数，不会生成实例对象。this 就代表调用函数的对象，在客户端指代全局对象 window。
+为了避免误用，最有效的方法是在函数中启用严格模式。
+function Point(x, y) { &#34;use strict&#34;; this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } 这样调用构造函数时，必须使用 new 命令，否则将抛出异常。"><meta itemprop="datePublished" content="2024-03-31T08:54:55+08:00" />
 <meta itemprop="dateModified" content="2024-03-31T08:54:55+08:00" />
-<meta itemprop="wordCount" content="8">
+<meta itemprop="wordCount" content="566">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="构造函数、原型和继承"/>
-<meta name="twitter:description" content="构造函数 定义构造函数 构造函数两个显著特点：
-函数体内使用 this，引用将要生成的实例对象。
-必须使用 new 命令调用函数，生成实例对象。"/>
+<meta name="twitter:description" content="构造函数 调用构造函数 function Point(x, y) { this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } var p1 = new Point(100, 200); var p2 = new Point(300, 400); console.log(p1.x); console.log(p2.x); console.log(p1.sum()); console.log(p2.sum()); 如果不使用 new 命令，直接使用小括号调用构造函数，这时构造函数就是普通函数，不会生成实例对象。this 就代表调用函数的对象，在客户端指代全局对象 window。
+为了避免误用，最有效的方法是在函数中启用严格模式。
+function Point(x, y) { &#34;use strict&#34;; this.x = x; this.y = y; this.sum = function () { return this.x &#43; this.y; }; } 这样调用构造函数时，必须使用 new 命令，否则将抛出异常。"/>
 
   
   
@@ -156,17 +156,180 @@
   </header>
 
   <section><h2 id="构造函数">构造函数</h2>
-<h3 id="定义构造函数">定义构造函数</h3>
-<p><strong>构造函数两个显著特点：</strong></p>
+<h3 id="调用构造函数">调用构造函数</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#ae81ff">300</span>, <span style="color:#ae81ff">400</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">sum</span>());
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">sum</span>());
+</span></span></code></pre></div><blockquote>
+<p>如果不使用 new 命令，直接使用小括号调用构造函数，这时构造函数就是普通函数，不会生成实例对象。this 就代表调用函数的对象，在客户端指代全局对象 window。</p>
+</blockquote>
+<p>为了避免误用，最有效的方法是在函数中启用严格模式。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;use strict&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这样调用构造函数时，必须使用 new 命令，否则将抛出异常。</p>
+<p>或者使用 if 对 this 进行检测，如果 this 不是实例对象，则强迫返回实例对象。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">Point</span>) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="构造函数的返回值">构造函数的返回值</h3>
+<p>构造函数允许使用 return 语句，如果返回值为简单值，则将被忽略，直接返回 this 指代的实例对象；</p>
+<p>如果返回值为对象，则将覆盖 this 指代的实例，返回 return 后面跟随的对象。</p>
+<p>返回对象：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">y</span>); <span style="color:#75715e">// false
+</span></span></span></code></pre></div><p>返回简单值：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// 100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p2</span>.<span style="color:#a6e22e">y</span>); <span style="color:#75715e">// 200
+</span></span></span></code></pre></div><h3 id="引用构造函数">引用构造函数</h3>
+<p>在普通函数内部，使用 <code>arguments.callee</code> 可以引用函数自身。如果在严格模式下，是不允许使用 <code>arguments.callee</code> 引用函数的，这时可以使用 <code>new.target</code> 来访问构造函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Point</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;use strict&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>(<span style="color:#66d9ef">this</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#66d9ef">new</span>.<span style="color:#a6e22e">target</span>)) <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">new</span>.<span style="color:#a6e22e">target</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>); <span style="color:#75715e">// 检测 this 是否为实例对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Point</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">200</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">p1</span>.<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// 100
+</span></span></span></code></pre></div><h2 id="this-指针">this 指针</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;window&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;b&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">f</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span>(); <span style="color:#75715e">// &#34;window&#34;，this 指向 window 对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">call</span>(window); <span style="color:#75715e">// &#34;window&#34;，this 指向 window 对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">a</span>()); <span style="color:#75715e">// &#34;a&#34;，this 指向函数 a 的实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">call</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">b</span>()); <span style="color:#75715e">// &#34;b&#34;，this 指向函数 b 的实例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">c</span>); <span style="color:#75715e">// undefined，this 指向函数 c 对象
+</span></span></span></code></pre></div><p><strong>下面简单总结 this 的 5 种常用场景：</strong></p>
 <ol>
-<li>
-<p>函数体内使用 this，引用将要生成的实例对象。</p>
-</li>
-<li>
-<p>必须使用 new 命令调用函数，生成实例对象。</p>
-</li>
+<li>普通调用</li>
 </ol>
-</section>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;父对象 obj&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">sub_obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;子对象 sub_obj&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">who</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">sub_obj</span>.<span style="color:#a6e22e">func</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">who</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// &#34;子对象 sub_obj&#34;，说明 this 代表 sub_obj
+</span></span></span></code></pre></div><p>如果把子对象 sub_obj 的 func 改为函数调用。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">sub_obj</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;子对象 sub_obj&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">func</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span>(), <span style="color:#75715e">// 调用父对象 obj 的方法 func
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};
+</span></span></code></pre></div><p>则函数中的 this 所代表的是定义函数时所在的父对象 obj。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">who</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">sub_obj</span>.<span style="color:#a6e22e">func</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">who</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// &#34;父对象 obj&#34;
+</span></span></span></code></pre></div><ol start="2">
+<li>实例化</li>
+</ol>
+<p>使用 new 命令调用函数时，this 总是指代实例对象。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">obj</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = obj&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">===</span> window) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = window&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">callee</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = 实例对象&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span>(); <span style="color:#75715e">// 实例化 “this = 实例对象”
+</span></span></span></code></pre></div><ol start="3">
+<li>动态调用</li>
+</ol>
+<p>使用 call 和 apply 可以强制改变 this，使其指向参数对象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">func</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">callee</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = 实例对象&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">===</span> window) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = window 对象&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this == 其他对象 \n this.constructor = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">func</span>(); <span style="color:#75715e">// this 指向 window
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">func</span>(); <span style="color:#75715e">// this 指向实例对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">func</span>.<span style="color:#a6e22e">call</span>(<span style="color:#ae81ff">1</span>); <span style="color:#75715e">// this 指向数值对象
+</span></span></span></code></pre></div><p>使用 <code>call()</code> 执行函数 <code>func()</code> 时，由于 call() 方法的参数值为数字 1，则 Js 引擎会把数字 1 强制封装为数值对象，此时 this 就会指向这个数值对象。</p>
+<ol start="4">
+<li>事件处理</li>
+</ol>
+<p>在事件处理函数中，this 总是指向触发该事件的对象。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;测试按钮&#34;</span> /&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">button</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByTagName</span>(<span style="color:#e6db74">&#34;input&#34;</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">obj</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = obj&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> window) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = window&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">button</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = button&#34;</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">button</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">fun</span>;
+</span></span></code></pre></div><ol start="5">
+<li>定时器</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">obj</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = obj&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span> <span style="color:#f92672">==</span> window) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = window&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">arguments</span>.<span style="color:#a6e22e">callee</span>) <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this = 实例对象&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;this == 其他对象 \n this.constructor = &#34;</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">constructor</span>);
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span>, <span style="color:#ae81ff">100</span>); <span style="color:#75715e">// &#34;this = window&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">func</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// &#34;this = obj&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}, <span style="color:#ae81ff">100</span>);
+</span></span></code></pre></div></section>
 
   
   
