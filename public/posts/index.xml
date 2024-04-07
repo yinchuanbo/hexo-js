@@ -7,7 +7,48 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 06 Apr 2024 20:29:14 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Apr 2024 22:11:15 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何使用 JavaScript 阻止屏幕进入睡眠状态</title>
+      <link>/posts/139/</link>
+      <pubDate>Sun, 07 Apr 2024 22:11:15 +0800</pubDate>
+      
+      <guid>/posts/139/</guid>
+      <description>前言 在移动设备上，屏幕常亮是一个常见的需求，尤其是在使用 Web 应用时。为了满足这一需求，开发者可以使用 JavaScript 中的 Wake Lock API 来阻止屏幕进入睡眠状态。本文将详细介绍如何使用这一 API，并讨论其在不同浏览器上的兼容性情况。
+检查 Wake Lock 功能的支持情况 在使用 Wake Lock API 之前，我们需要确认当前浏览器是否支持这一功能。可以通过以下代码进行检查：
+const isWakeLockSupported = &amp;#34;wakeLock&amp;#34; in navigator; 如果 isWakeLockSupported 为 true，则表示当前浏览器支持 Wake Lock 功能。
+浏览器兼容性 Wake Lock API 的兼容性因浏览器和操作系统而异。截至目前，以下是主流浏览器对 Wake Lock API 的支持情况：
+Chrome: 从 Chrome 85 版本开始支持 Wake Lock API。
+Firefox: 支持 Wake Lock API，但可能需要在设置中启用相应的功能。
+Safari: 截至目前，Safari 尚未支持 Wake Lock API。不过，可以使用第三方库如 NoSleep.js 作为替代方案。
+Edge: 作为基于 Chromium 的浏览器，Edge 的兼容性与 Chrome 类似。</description>
+    </item>
+    
+    <item>
+      <title>提升JavaScript代码质量的最佳实践</title>
+      <link>/posts/138/</link>
+      <pubDate>Sun, 07 Apr 2024 21:39:07 +0800</pubDate>
+      
+      <guid>/posts/138/</guid>
+      <description>1. 避免嵌套循环 嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。
+优化前：
+for (let i = 0; i &amp;lt; array1.length; i++) { for (let j = 0; j &amp;lt; array2.length; j++) { // 一些复杂的逻辑 } } 优化后：
+function processInnerLoop(item) { for (let j = 0; j &amp;lt; array2.length; j++) { // 一些复杂的逻辑 } } for (let i = 0; i &amp;lt; array1.length; i++) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。</description>
+    </item>
+    
+    <item>
+      <title>更灵活的 Map - array.flatMap()</title>
+      <link>/posts/137/</link>
+      <pubDate>Sun, 07 Apr 2024 21:35:23 +0800</pubDate>
+      
+      <guid>/posts/137/</guid>
+      <description>map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+const array1 = [1, 4, 9, 16]; const map1 = array1.map((x) =&amp;gt; x * 2); console.log(map1); // [2, 8, 18, 32] 但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：
+const array1 = [1, 4, 9, 16]; const map1 = array1.filter((x) =&amp;gt; x !== 1).map((x) =&amp;gt; x * 2); console.log(map1); // [8, 18, 32] 使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？
+答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+const array1 = [1, 4, 9, 16]; const map1 = array1.</description>
+    </item>
+    
     <item>
       <title>页面关闭时如何成功发送 API 请求</title>
       <link>/posts/136/</link>

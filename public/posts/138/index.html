@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>提升JavaScript代码质量的最佳实践 - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="1. 避免嵌套循环 嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。
+优化前：
+for (let i = 0; i &lt; array1.length; i&#43;&#43;) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } 优化后：
+function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } for (let i = 0; i &lt; array1.length; i&#43;&#43;) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。" />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="提升JavaScript代码质量的最佳实践" />
+<meta property="og:description" content="1. 避免嵌套循环 嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。
+优化前：
+for (let i = 0; i &lt; array1.length; i&#43;&#43;) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } 优化后：
+function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } for (let i = 0; i &lt; array1.length; i&#43;&#43;) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/138/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-07T21:39:07+08:00" />
+<meta property="article:modified_time" content="2024-04-07T21:39:07+08:00" />
+
+  
+  <meta itemprop="name" content="提升JavaScript代码质量的最佳实践">
+<meta itemprop="description" content="1. 避免嵌套循环 嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。
+优化前：
+for (let i = 0; i &lt; array1.length; i&#43;&#43;) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } 优化后：
+function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } for (let i = 0; i &lt; array1.length; i&#43;&#43;) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。"><meta itemprop="datePublished" content="2024-04-07T21:39:07+08:00" />
+<meta itemprop="dateModified" content="2024-04-07T21:39:07+08:00" />
+<meta itemprop="wordCount" content="495">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="提升JavaScript代码质量的最佳实践"/>
+<meta name="twitter:description" content="1. 避免嵌套循环 嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。
+优化前：
+for (let i = 0; i &lt; array1.length; i&#43;&#43;) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } 优化后：
+function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } for (let i = 0; i &lt; array1.length; i&#43;&#43;) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。"/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      提升JavaScript代码质量的最佳实践
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 7, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><h2 id="1-避免嵌套循环">1. 避免嵌套循环</h2>
+<p>嵌套循环会增加代码的复杂度，使其难以阅读和维护。我们可以通过将内部循环提取为一个单独的函数来优化代码。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array2</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 一些复杂的逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">processInnerLoop</span>(<span style="color:#a6e22e">item</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">j</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array2</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">j</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 一些复杂的逻辑
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">processInnerLoop</span>(<span style="color:#a6e22e">array1</span>[<span style="color:#a6e22e">i</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="2-使用-mapfilter-和-reduce-替代-for-循环">2. 使用 map、filter 和 reduce 替代 for 循环</h2>
+<p>在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">array</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>) =&gt; <span style="color:#a6e22e">item</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><h2 id="3-使用解构赋值简化代码">3. 使用解构赋值简化代码</h2>
+<p>解构赋值是 ES6 中引入的一个新特性，它允许我们用更简洁的语法从数组或对象中提取数据。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">firstName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">firstName</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastName</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">lastName</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">age</span>;
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">firstName</span>, <span style="color:#a6e22e">lastName</span>, <span style="color:#a6e22e">age</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>;
+</span></span></code></pre></div><h2 id="4-多条件-if-判断">4. 多条件 if 判断</h2>
+<p>避免重复性的判断某一个变量，可将多个值放在一个数组中，然后调用数组的 include 方法。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;c&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;d&#34;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 逻辑处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ([<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>].<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">a</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 逻辑处理
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="5-使用默认参数值">5. 使用默认参数值</h2>
+<p>在函数中，我们经常需要处理未传递的参数。使用默认参数值可以简化这个过程。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;Guest&#34;</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;Hello, &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">greet</span>(<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Guest&#34;</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="6-简化-if-true-else-条件表达式">6. 简化 if true else 条件表达式</h2>
+<p>逻辑只是 true/false 的赋值时，简化不必要的 if 语句。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">100</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bool</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">bool</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h2 id="7-indexof-的更简单写法">7. indexOf 的更简单写法</h2>
+<p>在数组中查找某个值是否存在可以使用 indexOf 方法，下面这种写法更简单。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">item</span>) <span style="color:#f92672">&gt;</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">item</span>) <span style="color:#f92672">===</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 不存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">~</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">item</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!~</span><span style="color:#a6e22e">list</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">item</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 不存在
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h2 id="8-switch-语句简化">8. switch 语句简化</h2>
+<p>将需要执行的条件存储在键值对象中，最后根据条件调用存储的方法。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">type</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">run1</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">run2</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">run3</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run1</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run2</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">run3</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">type</span>] <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">type</span>]();
+</span></span></code></pre></div><h2 id="9-提前-return">9. 提前 return</h2>
+<p>快速 return（也称为提前 return 或守卫子句）是一种编程模式，特别是在处理多个条件判断时，它可以提高函数的可读性和性能。这种模式通过在函数的开始处检查条件，并在条件满足时立即返回，从而避免执行后续的不必要代码。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Negative&#34;</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Zero&#34;</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Positive&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">check</span>(<span style="color:#a6e22e">number</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Negative&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">number</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Zero&#34;</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Positive&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="10-可选链运算符">10. 可选链运算符?.</h2>
+<p>可选链运算符?.提供了一种简洁的方式来安全地访问对象中深层嵌套的属性。它允许开发者在不进行每一步引用校验的情况下读取属性值，如果链中的任何引用是 null 或 undefined，表达式将返回 undefined。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vacationItinerary</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">wednesday</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">venue</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Louvre Museum&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">expenses</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">150</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>使用传统方法来安全地访问一个可能不存在的属性会涉及多个逻辑与操作：</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vacationItinerary</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vacationItinerary</span>.<span style="color:#a6e22e">wednesday</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">vacationItinerary</span>.<span style="color:#a6e22e">wednesday</span>.<span style="color:#a6e22e">expenses</span>;
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vacationItinerary</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">wednesday</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">expenses</span>;
+</span></span></code></pre></div><h2 id="11多条件运算符">11.多条件&amp;&amp;运算符</h2>
+<p>当你需要在变量为真时才执行某个函数，可以使用逻辑与&amp;&amp;运算符来简化代码。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 传统的条件判断
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isValid</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">initiateProcess</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 简化后的条件执行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">isValid</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">initiateProcess</span>();
+</span></span></code></pre></div><h3 id="12-使用数字分隔符增强可读性">12. 使用数字分隔符增强可读性</h3>
+<p>为了提升大数字的可读性，可以使用下划线_作为数值分隔符，它允许将数字分隔成更易于阅读的形式。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">number</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1_000_000_000</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">number</span>); <span style="color:#75715e">// 输出：1000000000
+</span></span></span></code></pre></div><h3 id="13-字符串转换数字">13. 字符串转换数字</h3>
+<p>虽然可以使用 parseInt 和 parseFloat 等内置方法将字符串转换为数字，但还有一种更简洁的方式：在字符串前使用一元加号+运算符。</p>
+<p>优化前：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#e6db74">&#34;456&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">average</span> <span style="color:#f92672">=</span> parseFloat(<span style="color:#e6db74">&#34;87.5&#34;</span>);
+</span></span></code></pre></div><p>优化后：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">total</span> <span style="color:#f92672">=</span> <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;456&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">average</span> <span style="color:#f92672">=</span> <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;87.5&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">+</span><span style="color:#a6e22e">currentState</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 执行相关操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>使用一元加号+进行转换是一种简单且有效的方法，尤其适合在需要轻量级转换的场景中。</p>
+<ol start="14">
+<li>提升控制台输出的清晰度</li>
+</ol>
+<p>当你需要在控制台中打印变量的值时，将其包裹在对象字面量中可以同时显示变量名和值，从而提高输出的清晰度。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Peter&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>({ <span style="color:#a6e22e">username</span> });
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 控制台输出将会是：
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Peter&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>这种方法不仅让你一目了然地看到变量的名称和对应的值，而且在调试多个变量时尤其有用。它避免了在控制台中查找与变量值对应的变量名的麻烦，使得调试过程更加高效。</p>
+<h2 id="15-数组截断技巧">15. 数组截断技巧</h2>
+<p>要快速截断数组至指定长度，只需修改数组的 length 属性即可。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">numbers</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#e6db74">&#34;3&#34;</span>, <span style="color:#e6db74">&#34;4&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">numbers</span>); <span style="color:#75715e">// 输出：[&#39;1&#39;, &#39;2&#39;]
+</span></span></span></code></pre></div><p>这个方法简单而直接，能够有效地减少数组的长度，而无需使用额外的函数或方法，尤其在你确切知道需要的数组长度时。</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center p-6 pr-3 no-underline" href="/posts/139/"
+      ><span class="mr-1.5">←</span><span>如何使用 JavaScript 阻止屏幕进入睡眠状态</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/137/"
+      ><span>更灵活的 Map - array.flatMap()</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

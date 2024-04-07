@@ -16,6 +16,7 @@
 :root {
   --pre-ff: MyFont, hack, "Fira Code";
   --nor-ff: "MyFont", hack, "Fira Code", 'Microsoft YaHei UI';
+  --ff: hack;
   --main-color: #3583fb;
   --font-size: 18px;
 }
@@ -41,17 +42,19 @@ body {
 
 .highlight pre {
   padding: 20px;
-  padding-top: 12px;
-  font-size: 18px;
-  line-height: 1.8;
-  border-radius: 10px;
+  /* padding-top: 12px; */
+  font-size: 1.1em;
+  line-height: 2;
+  border-radius: 0;
   overflow: auto;
-  /* box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-  background-color: #211951!important; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  font-style: italic;
+  border-radius: 20px;
+  /* background-color: #232D3F!important; */
 }
 
 .highlight pre code {
-  font-family: var(--pre-ff)!important;
+  font-family: var(--ff)!important;
 }
 
 article p, .highlight  {
@@ -60,7 +63,7 @@ article p, .highlight  {
 
 article p {
   font-size: var(--font-size);
-  line-height: 1.8;
+  /* line-height: 1.8; */
   letter-spacing: .5px;
   font-family: var(--nor-ff)!important;
 }
@@ -128,12 +131,12 @@ article h3 {
 }
 
 body header {
-  max-width: 1000px;
+  max-width: 975px;
   margin: 0 auto;
 }
 
 body main {
-  max-width: 1000px;
+  max-width: 975px;
   min-height: calc(100vh - 40px);
   background-color: #fff;
   margin: 0 auto;
@@ -176,7 +179,7 @@ ul > li::before {
   content: "";
   position: absolute;
   /* top: 50%; */
-  top: 16px;
+  top: 9px;
   left: 0;
   width: 7px;
   height: 7px;
@@ -291,7 +294,7 @@ span[style="color:#75715e"]{
 }
 
 img {
-  max-width: 100%;
+  max-width: 650px;
   border-radius: 5px;
   display: block;
   margin: 0 auto;

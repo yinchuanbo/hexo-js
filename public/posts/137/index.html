@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>更灵活的 Map - array.flatMap() - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+const array1 = [1, 4, 9, 16]; const map1 = array1.map((x) =&gt; x * 2); console.log(map1); // [2, 8, 18, 32] 但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：
+const array1 = [1, 4, 9, 16]; const map1 = array1.filter((x) =&gt; x !== 1).map((x) =&gt; x * 2); console.log(map1); // [8, 18, 32] 使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？
+答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+const array1 = [1, 4, 9, 16]; const map1 = array1." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="更灵活的 Map - array.flatMap()" />
+<meta property="og:description" content="map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+const array1 = [1, 4, 9, 16]; const map1 = array1.map((x) =&gt; x * 2); console.log(map1); // [2, 8, 18, 32] 但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：
+const array1 = [1, 4, 9, 16]; const map1 = array1.filter((x) =&gt; x !== 1).map((x) =&gt; x * 2); console.log(map1); // [8, 18, 32] 使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？
+答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+const array1 = [1, 4, 9, 16]; const map1 = array1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/137/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-07T21:35:23+08:00" />
+<meta property="article:modified_time" content="2024-04-07T21:35:23+08:00" />
+
+  
+  <meta itemprop="name" content="更灵活的 Map - array.flatMap()">
+<meta itemprop="description" content="map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+const array1 = [1, 4, 9, 16]; const map1 = array1.map((x) =&gt; x * 2); console.log(map1); // [2, 8, 18, 32] 但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：
+const array1 = [1, 4, 9, 16]; const map1 = array1.filter((x) =&gt; x !== 1).map((x) =&gt; x * 2); console.log(map1); // [8, 18, 32] 使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？
+答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+const array1 = [1, 4, 9, 16]; const map1 = array1."><meta itemprop="datePublished" content="2024-04-07T21:35:23+08:00" />
+<meta itemprop="dateModified" content="2024-04-07T21:35:23+08:00" />
+<meta itemprop="wordCount" content="107">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="更灵活的 Map - array.flatMap()"/>
+<meta name="twitter:description" content="map() 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。
+const array1 = [1, 4, 9, 16]; const map1 = array1.map((x) =&gt; x * 2); console.log(map1); // [2, 8, 18, 32] 但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：
+const array1 = [1, 4, 9, 16]; const map1 = array1.filter((x) =&gt; x !== 1).map((x) =&gt; x * 2); console.log(map1); // [8, 18, 32] 使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？
+答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。
+const array1 = [1, 4, 9, 16]; const map1 = array1."/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      更灵活的 Map - array.flatMap()
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 7, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><p><code>map()</code> 方法创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">16</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">map1</span>); <span style="color:#75715e">// [2, 8, 18, 32]
+</span></span></span></code></pre></div><p>但有时，我们需要跳过数组中的某些元素，以上面的例子为例，当我们需要跳过元素 1 时，可以结合 filter 方法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">16</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">filter</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">!==</span> <span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">map1</span>); <span style="color:#75715e">// [8, 18, 32]
+</span></span></span></code></pre></div><p>使用 map 和 filter 结合的方式固然可以解决我们的需求，但多个方法的结合让代码看起来不那么简洁易读，有没有更简短的方式来实现呢？</p>
+<p>答案是肯定的。使用 flatMap 方法，flatMap() 方法首先使用映射函数映射每个元素，然后将结果压缩成一个新数组。它与 map 连着深度值为 1 的 flat 几乎相同，但 flatMap 通常在合并成一种方法的效率稍微高一些。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">array1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">16</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">array1</span>.<span style="color:#a6e22e">flatMap</span>((<span style="color:#a6e22e">x</span>) =&gt; (<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">?</span> [] <span style="color:#f92672">:</span> [<span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>]));
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">map1</span>); <span style="color:#75715e">// [8, 18, 32]
+</span></span></span></code></pre></div><p>flatMap 能用于在 map 期间增删项目（也就是修改 items 的数量）。换句话说，它允许你遍历很多项使之成为另一些项（靠分别把它们放进去来处理），而不是总是一对一。从这个意义上讲，它的作用类似于 filter 的对立面。只需返回一个 1 项元素数组以保留该项，返回一个多元素数组以添加项，或返回一个 0 项元素数组以删除该项。</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center p-6 pr-3 no-underline" href="/posts/138/"
+      ><span class="mr-1.5">←</span><span>提升JavaScript代码质量的最佳实践</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/136/"
+      ><span>页面关闭时如何成功发送 API 请求</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
