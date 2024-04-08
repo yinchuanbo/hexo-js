@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>如何让 cookie 有 session 的特性 - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：
+document.cookie = &#34;cookieName=cookieValue; path=/&#34;; 要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：
+function getCookieExpirationDate(cookieName) { var cookies = document.cookie.split(&#34;;&#34;); for (var i = 0; i &lt; cookies.length; i&#43;&#43;) { var cookie = cookies[i].trim(); if (cookie.indexOf(cookieName &#43; &#34;=&#34;) === 0) { var cookieValue = cookie.substring(cookieName.length &#43; 1); return new Date(cookieValue); } } return null; } function isCookieExpired(cookieName) { var expirationDate = getCookieExpirationDate(cookieName); if (expirationDate === null) { return true; // Cookie not found } else { var currentDate = new Date(); return currentDate &gt; expirationDate; } } // Example usage var cookieName = &#34;cookieName&#34;; if (isCookieExpired(cookieName)) { console." />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="如何让 cookie 有 session 的特性" />
+<meta property="og:description" content="可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：
+document.cookie = &#34;cookieName=cookieValue; path=/&#34;; 要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：
+function getCookieExpirationDate(cookieName) { var cookies = document.cookie.split(&#34;;&#34;); for (var i = 0; i &lt; cookies.length; i&#43;&#43;) { var cookie = cookies[i].trim(); if (cookie.indexOf(cookieName &#43; &#34;=&#34;) === 0) { var cookieValue = cookie.substring(cookieName.length &#43; 1); return new Date(cookieValue); } } return null; } function isCookieExpired(cookieName) { var expirationDate = getCookieExpirationDate(cookieName); if (expirationDate === null) { return true; // Cookie not found } else { var currentDate = new Date(); return currentDate &gt; expirationDate; } } // Example usage var cookieName = &#34;cookieName&#34;; if (isCookieExpired(cookieName)) { console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/140/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-08T09:39:00+08:00" />
+<meta property="article:modified_time" content="2024-04-08T09:39:00+08:00" />
+
+  
+  <meta itemprop="name" content="如何让 cookie 有 session 的特性">
+<meta itemprop="description" content="可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：
+document.cookie = &#34;cookieName=cookieValue; path=/&#34;; 要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：
+function getCookieExpirationDate(cookieName) { var cookies = document.cookie.split(&#34;;&#34;); for (var i = 0; i &lt; cookies.length; i&#43;&#43;) { var cookie = cookies[i].trim(); if (cookie.indexOf(cookieName &#43; &#34;=&#34;) === 0) { var cookieValue = cookie.substring(cookieName.length &#43; 1); return new Date(cookieValue); } } return null; } function isCookieExpired(cookieName) { var expirationDate = getCookieExpirationDate(cookieName); if (expirationDate === null) { return true; // Cookie not found } else { var currentDate = new Date(); return currentDate &gt; expirationDate; } } // Example usage var cookieName = &#34;cookieName&#34;; if (isCookieExpired(cookieName)) { console."><meta itemprop="datePublished" content="2024-04-08T09:39:00+08:00" />
+<meta itemprop="dateModified" content="2024-04-08T09:39:00+08:00" />
+<meta itemprop="wordCount" content="143">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何让 cookie 有 session 的特性"/>
+<meta name="twitter:description" content="可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：
+document.cookie = &#34;cookieName=cookieValue; path=/&#34;; 要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：
+function getCookieExpirationDate(cookieName) { var cookies = document.cookie.split(&#34;;&#34;); for (var i = 0; i &lt; cookies.length; i&#43;&#43;) { var cookie = cookies[i].trim(); if (cookie.indexOf(cookieName &#43; &#34;=&#34;) === 0) { var cookieValue = cookie.substring(cookieName.length &#43; 1); return new Date(cookieValue); } } return null; } function isCookieExpired(cookieName) { var expirationDate = getCookieExpirationDate(cookieName); if (expirationDate === null) { return true; // Cookie not found } else { var currentDate = new Date(); return currentDate &gt; expirationDate; } } // Example usage var cookieName = &#34;cookieName&#34;; if (isCookieExpired(cookieName)) { console."/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      如何让 cookie 有 session 的特性
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 8, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><p>可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cookieName=cookieValue; path=/&#34;</span>;
+</span></span></code></pre></div><p>要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getCookieExpirationDate</span>(<span style="color:#a6e22e">cookieName</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookies</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#34;;&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">cookies</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cookies</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">trim</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=&#34;</span>) <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookieValue</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cookie</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">cookieName</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">cookieValue</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">isCookieExpired</span>(<span style="color:#a6e22e">cookieName</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">expirationDate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">getCookieExpirationDate</span>(<span style="color:#a6e22e">cookieName</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">expirationDate</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>; <span style="color:#75715e">// Cookie not found
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currentDate</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">currentDate</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">expirationDate</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Example usage
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;cookieName&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isCookieExpired</span>(<span style="color:#a6e22e">cookieName</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; has expired.&#34;</span>);
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; has not expired.&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>cookie 删除：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">deleteCookie</span>(<span style="color:#a6e22e">cookieName</span>) {
+</span></span><span style="display:flex;"><span>  document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cookieName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;cookieName&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">deleteCookie</span>(<span style="color:#a6e22e">cookieName</span>);
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/139/"
+      ><span>如何使用 JavaScript 阻止屏幕进入睡眠状态</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

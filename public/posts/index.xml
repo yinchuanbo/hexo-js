@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 07 Apr 2024 22:11:15 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Apr 2024 09:39:00 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何让 cookie 有 session 的特性</title>
+      <link>/posts/140/</link>
+      <pubDate>Mon, 08 Apr 2024 09:39:00 +0800</pubDate>
+      
+      <guid>/posts/140/</guid>
+      <description>可以将 cookie 的过期时间设置为会话 cookie，这样它将在浏览器会话结束时自动过期。在设置 cookie 时，不设置过期时间参数即可实现这一点。例如，在 JavaScript 中：
+document.cookie = &amp;#34;cookieName=cookieValue; path=/&amp;#34;; 要判断 cookie 是否过期，您可以通过检查 cookie 的过期时间来实现。在 JavaScript 中，您可以使用以下代码来获取特定 cookie 的过期时间并进行比较：
+function getCookieExpirationDate(cookieName) { var cookies = document.cookie.split(&amp;#34;;&amp;#34;); for (var i = 0; i &amp;lt; cookies.length; i++) { var cookie = cookies[i].trim(); if (cookie.indexOf(cookieName + &amp;#34;=&amp;#34;) === 0) { var cookieValue = cookie.substring(cookieName.length + 1); return new Date(cookieValue); } } return null; } function isCookieExpired(cookieName) { var expirationDate = getCookieExpirationDate(cookieName); if (expirationDate === null) { return true; // Cookie not found } else { var currentDate = new Date(); return currentDate &amp;gt; expirationDate; } } // Example usage var cookieName = &amp;#34;cookieName&amp;#34;; if (isCookieExpired(cookieName)) { console.</description>
+    </item>
+    
     <item>
       <title>如何使用 JavaScript 阻止屏幕进入睡眠状态</title>
       <link>/posts/139/</link>
