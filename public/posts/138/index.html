@@ -117,7 +117,7 @@ function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#
 for (let i = 0; i &lt; array1.length; i&#43;&#43;) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } 优化后：
 function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#43;) { // 一些复杂的逻辑 } } for (let i = 0; i &lt; array1.length; i&#43;&#43;) { processInnerLoop(array1[i]); } 2. 使用 map、filter 和 reduce 替代 for 循环 在处理数组时，我们经常使用 for 循环来迭代数组并进行一些操作。然而，使用 map、filter 和 reduce 这些高阶函数可以使代码更加简洁和易于理解。"><meta itemprop="datePublished" content="2024-04-07T21:39:07+08:00" />
 <meta itemprop="dateModified" content="2024-04-07T21:39:07+08:00" />
-<meta itemprop="wordCount" content="495">
+<meta itemprop="wordCount" content="496">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -330,9 +330,7 @@ function processInnerLoop(item) { for (let j = 0; j &lt; array2.length; j&#43;&#
 </span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 执行相关操作
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><p>使用一元加号+进行转换是一种简单且有效的方法，尤其适合在需要轻量级转换的场景中。</p>
-<ol start="14">
-<li>提升控制台输出的清晰度</li>
-</ol>
+<h3 id="14-提升控制台输出的清晰度">14. 提升控制台输出的清晰度</h3>
 <p>当你需要在控制台中打印变量的值时，将其包裹在对象字面量中可以同时显示变量名和值，从而提高输出的清晰度。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Peter&#34;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>({ <span style="color:#a6e22e">username</span> });
