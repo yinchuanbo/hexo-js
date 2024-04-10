@@ -12,7 +12,7 @@
   --ff: "Fira Code", MyFont;
   --main-color: #3583fb;
   --font-size: 18px;
-  --bg-color: #647e68;
+  --bg-color: #606C5D;
 }
 
 
@@ -52,7 +52,7 @@ body {
   box-shadow: none;
   /* background-color: rgba(0, 0, 0, 0.65)!important; */
   background-color: rgba(0, 0, 0, 0.15) !important;
-  border-radius: 20px !important;
+  border-radius: 15px !important;
   /* box-shadow: var(--clay-shadow-outset,8px 8px 16px 0 rgba(0,0,0,25%)),inset var(--clay-shadow-inset-primary,-8px -8px 16px 0 rgba(0,0,0,25%)),inset var(--clay-shadow-inset-secondary,8px 8px 16px 0 hsla(0deg,0%,100%,20%)) !important; */
 }
 
@@ -153,9 +153,10 @@ body main {
   min-height: calc(100vh - 40px);
   /* background-color: #fff; */
   margin: 0 auto;
-  padding: 20px 30px;
+  padding: 20px 35px;
   box-sizing: border-box;
   border-radius: 10px;
+  padding-top: 25px;
   padding-bottom: 50px;
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   background-color: var(--bg-color);
@@ -253,17 +254,14 @@ table tbody tr:last-child td {
 }
 
 article nav a, .prev_btn, .next_btn {
-  padding: 15px 40px;
+  padding: 10px 20px;
   border-radius: 40px;
   text-decoration: none;
   color: #fff;
   font-family: var(--nor-ff);
   border: 2px solid #fff;
   transition: all .5s;
-  font-size: 16px;
-  /* background-color: transparent !important; */
-  /* border-radius: 25px !important; */
-  /* box-shadow: var(--clay-shadow-outset, 8px 8px 16px 0 rgba(0, 0, 0, 25%)), inset var(--clay-shadow-inset-primary, -8px -8px 16px 0 rgba(0, 0, 0, 25%)), inset var(--clay-shadow-inset-secondary, 8px 8px 16px 0 hsla(0deg, 0%, 100%, 20%)) !important; */
+  font-size: 14px;
 }
 
 article nav a:hover, .prev_btn:hover, .next_btn:hover {
@@ -275,11 +273,13 @@ article nav a:hover, .prev_btn:hover, .next_btn:hover {
 article nav a .mr-1\.5 {
   margin-right: 5px;
   font-size: 18px;
+  display: none;
 }
 
 article nav a .ml-1\.5 {
   margin-left: 5px;
   font-size: 18px;
+  display: none;
 }
 
 .my-10 {

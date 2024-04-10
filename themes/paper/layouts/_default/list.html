@@ -55,10 +55,10 @@
 <nav class="flex">
 <!-- <nav class="mt-24 flex" style="margin-top: 3rem;"> -->
   {{ if $paginator.HasPrev }}
-  <a class="btn prev_btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+  <a class="btn prev_btn" href="{{ $paginator.Prev.URL }}">{{ i18n "prev_page" }}</a>
   {{ end }}<!---->
   {{ if $paginator.HasNext }}
-  <a class="btn ml-auto next_btn" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+  <a class="btn ml-auto next_btn" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }}</a>
   {{ end }}
 </nav>
 {{ end }}<!---->
