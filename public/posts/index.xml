@@ -7,7 +7,64 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 08 Apr 2024 21:11:38 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Apr 2024 19:45:03 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>抓包工具 - whistle</title>
+      <link>/posts/146/</link>
+      <pubDate>Sun, 14 Apr 2024 19:45:03 +0800</pubDate>
+      
+      <guid>/posts/146/</guid>
+      <description>前言 好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。
+whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。
+安装&amp;amp;使用 安装与启动 whistle npm install -g whistle w2 start // 启动whistle w2 stop //停止whistle` 启动之后会在本机启动一台服务器，默认端口是 8899
+在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 -n yourusername -w yourpassword
+浏览器代理插件 在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。
+官方推荐的插件是SwitchyOmega，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。
+安装完成之后浏览器的工具栏内就会出现一个圆圈图标。
+我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。
+这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。
+注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。
+配置证书 虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。</description>
+    </item>
+    
+    <item>
+      <title>前端工具库 Radash，取代 Lodash</title>
+      <link>/posts/145/</link>
+      <pubDate>Thu, 11 Apr 2024 20:47:23 +0800</pubDate>
+      
+      <guid>/posts/145/</guid>
+      <description>Radash tryit 方法 tryit 方法相当于可以给异步操作加一层 try catch，有利于操作的兜底以及错误的捕获。
+import { tryit } from &amp;#34;radash&amp;#34;; const [err, user] = await tryit(api.users.request)(userId); if (err) { // error action return; } // success action parallel 方法 parallel 可以理解为 Promise.all 的加强版，它不止能帮你做多个异步操作的并发处理，还能帮你控制并发数量。
+import { parallel } from &amp;#34;radash&amp;#34;; const userIds = [1, 2, 3, 4, 5, 6, 7, 8]; const users = await parallel(3, userIds, async (userId) =&amp;gt; { return await api.users.find(userId); }); retry 方法 retry 可以帮你做异步操作的失败重试，并且你可以配置重试延迟、重试次数</description>
+    </item>
+    
+    <item>
+      <title>JS字体加载失败或完毕的检测</title>
+      <link>/posts/144/</link>
+      <pubDate>Wed, 10 Apr 2024 22:03:14 +0800</pubDate>
+      
+      <guid>/posts/144/</guid>
+      <description>具体代码 // 兼容性判断，防止 IE 浏览器下报错 if (window.FontFace) { var fontFile = new FontFace(&amp;#34;Some Font Name&amp;#34;, &amp;#34;url(someFontUrl.woff2)&amp;#34;); fontFile.load().then( function () { console.log(&amp;#34;成功&amp;#34;); }, function (err) { console.log(&amp;#34;失败：&amp;#34; + err); } ); } 打开网络监控，点击按钮后可以看到字体的请求：
+二、了解 FontFace API FontFace API 相对于把 CSS @font-face 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。
+其支持的一些 API 属性和 @font-face 规则支持的 CSS 属性是一一对应的。
+例如：
+FontFace.display 对应 CSS font-display 属性；
+FontFace.family 对应 font-family 属性；
+FontFace.featureSettings 对应 font-feature-settings 属性；
+FontFace.stretch 对应 font-stretch 属性；
+FontFace.style 对应 font-style 属性；</description>
+    </item>
+    
+    <item>
+      <title>如何实现页面刷新后不定位到之前的滚动位置？</title>
+      <link>/posts/143/</link>
+      <pubDate>Wed, 10 Apr 2024 21:59:09 +0800</pubDate>
+      
+      <guid>/posts/143/</guid>
+      <description>使用很简单，在页面的任意位置执行下面几行 JS 代码就可以了：
+if (history.scrollRestoration) { history.scrollRestoration = &amp;#34;manual&amp;#34;; } </description>
+    </item>
+    
     <item>
       <title>2024 想学习的几个框架</title>
       <link>/posts/142/</link>

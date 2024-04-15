@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>JS字体加载失败或完毕的检测 - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="具体代码 // 兼容性判断，防止 IE 浏览器下报错 if (window.FontFace) { var fontFile = new FontFace(&#34;Some Font Name&#34;, &#34;url(someFontUrl.woff2)&#34;); fontFile.load().then( function () { console.log(&#34;成功&#34;); }, function (err) { console.log(&#34;失败：&#34; &#43; err); } ); } 打开网络监控，点击按钮后可以看到字体的请求：
+二、了解 FontFace API FontFace API 相对于把 CSS @font-face 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。
+其支持的一些 API 属性和 @font-face 规则支持的 CSS 属性是一一对应的。
+例如：
+FontFace.display 对应 CSS font-display 属性；
+FontFace.family 对应 font-family 属性；
+FontFace.featureSettings 对应 font-feature-settings 属性；
+FontFace.stretch 对应 font-stretch 属性；
+FontFace.style 对应 font-style 属性；" />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="JS字体加载失败或完毕的检测" />
+<meta property="og:description" content="具体代码 // 兼容性判断，防止 IE 浏览器下报错 if (window.FontFace) { var fontFile = new FontFace(&#34;Some Font Name&#34;, &#34;url(someFontUrl.woff2)&#34;); fontFile.load().then( function () { console.log(&#34;成功&#34;); }, function (err) { console.log(&#34;失败：&#34; &#43; err); } ); } 打开网络监控，点击按钮后可以看到字体的请求：
+二、了解 FontFace API FontFace API 相对于把 CSS @font-face 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。
+其支持的一些 API 属性和 @font-face 规则支持的 CSS 属性是一一对应的。
+例如：
+FontFace.display 对应 CSS font-display 属性；
+FontFace.family 对应 font-family 属性；
+FontFace.featureSettings 对应 font-feature-settings 属性；
+FontFace.stretch 对应 font-stretch 属性；
+FontFace.style 对应 font-style 属性；" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/144/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-10T22:03:14+08:00" />
+<meta property="article:modified_time" content="2024-04-10T22:03:14+08:00" />
+
+  
+  <meta itemprop="name" content="JS字体加载失败或完毕的检测">
+<meta itemprop="description" content="具体代码 // 兼容性判断，防止 IE 浏览器下报错 if (window.FontFace) { var fontFile = new FontFace(&#34;Some Font Name&#34;, &#34;url(someFontUrl.woff2)&#34;); fontFile.load().then( function () { console.log(&#34;成功&#34;); }, function (err) { console.log(&#34;失败：&#34; &#43; err); } ); } 打开网络监控，点击按钮后可以看到字体的请求：
+二、了解 FontFace API FontFace API 相对于把 CSS @font-face 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。
+其支持的一些 API 属性和 @font-face 规则支持的 CSS 属性是一一对应的。
+例如：
+FontFace.display 对应 CSS font-display 属性；
+FontFace.family 对应 font-family 属性；
+FontFace.featureSettings 对应 font-feature-settings 属性；
+FontFace.stretch 对应 font-stretch 属性；
+FontFace.style 对应 font-style 属性；"><meta itemprop="datePublished" content="2024-04-10T22:03:14+08:00" />
+<meta itemprop="dateModified" content="2024-04-10T22:03:14+08:00" />
+<meta itemprop="wordCount" content="143">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS字体加载失败或完毕的检测"/>
+<meta name="twitter:description" content="具体代码 // 兼容性判断，防止 IE 浏览器下报错 if (window.FontFace) { var fontFile = new FontFace(&#34;Some Font Name&#34;, &#34;url(someFontUrl.woff2)&#34;); fontFile.load().then( function () { console.log(&#34;成功&#34;); }, function (err) { console.log(&#34;失败：&#34; &#43; err); } ); } 打开网络监控，点击按钮后可以看到字体的请求：
+二、了解 FontFace API FontFace API 相对于把 CSS @font-face 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。
+其支持的一些 API 属性和 @font-face 规则支持的 CSS 属性是一一对应的。
+例如：
+FontFace.display 对应 CSS font-display 属性；
+FontFace.family 对应 font-family 属性；
+FontFace.featureSettings 对应 font-feature-settings 属性；
+FontFace.stretch 对应 font-stretch 属性；
+FontFace.style 对应 font-style 属性；"/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      JS字体加载失败或完毕的检测
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 10, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><h3 id="具体代码">具体代码</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 兼容性判断，防止 IE 浏览器下报错
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">FontFace</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fontFile</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FontFace</span>(<span style="color:#e6db74">&#34;Some Font Name&#34;</span>, <span style="color:#e6db74">&#34;url(someFontUrl.woff2)&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fontFile</span>.<span style="color:#a6e22e">load</span>().<span style="color:#a6e22e">then</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> () {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;成功&#34;</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">err</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;失败：&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">err</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>打开网络监控，点击按钮后可以看到字体的请求：</p>
+<img src="/img/144/02.gif" />
+<img src="/img/144/01.gif" />
+<h3 id="二了解-fontface-api">二、了解 FontFace API</h3>
+<p>FontFace API 相对于把 CSS <code>@font-face</code> 一些不可控的策略搬到了 JS 中，以便我们可以灵活设置。</p>
+<p>其支持的一些 API 属性和 <code>@font-face</code> 规则支持的 CSS 属性是一一对应的。</p>
+<p>例如：</p>
+<ul>
+<li>
+<p>FontFace.display 对应 CSS <code>font-display</code> 属性；</p>
+</li>
+<li>
+<p>FontFace.family 对应 font-family 属性；</p>
+</li>
+<li>
+<p>FontFace.featureSettings 对应 font-feature-settings 属性；</p>
+</li>
+<li>
+<p>FontFace.stretch 对应 font-stretch 属性；</p>
+</li>
+<li>
+<p>FontFace.style 对应 font-style 属性；</p>
+</li>
+<li>
+<p>FontFace.unicodeRange 对应 unicode-range 属性；</p>
+</li>
+<li>
+<p>FontFace.variant 对应 font-variant 属性；</p>
+</li>
+<li>
+<p>FontFace.variationSettings 对应 font-variation-settings 属性；</p>
+</li>
+<li>
+<p>FontFace.weight 对应 font-weight 属性；</p>
+</li>
+<li>
+<p>FontFace.ascentOverride 对应 ascent-override 属性；</p>
+</li>
+<li>
+<p>FontFace.descentOverride 对应 descent-override 属性；</p>
+</li>
+<li>
+<p>FontFace.lineGapOverride 对应 line-gap-override 属性；</p>
+</li>
+</ul>
+<p>另外，FontFace 接口还有如下一些只读属性和方法：</p>
+<p><strong>FontFace.loaded</strong></p>
+<p>返回一个 Promise，自定义字体加载完毕或者失败之后触发。感觉有些鸡肋，有了 load() 方法，这个属性有什么用呢？而且此方法根据我的测试，貌似要执行 load() 才有效。</p>
+<p><strong>FontFace.status</strong></p>
+<p>返回字体的状态，值可能是后面其中之一：<code>&quot;unloaded&quot;</code>, <code>&quot;loading&quot;</code>, <code>&quot;loaded&quot;</code> 或者 <code>&quot;error&quot;</code>。</p>
+<p><strong>FontFace.load()</strong></p>
+<p>触发自定义字体加载，可以是 URL 地址，也可以是字体的 buffer 资源，返回值是个 Promise，成功后返回当前 FontFace 对象。</p>
+<p>简单的使用示意：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fontFile</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FontFace</span>(<span style="color:#e6db74">&#34;Some Font Name&#34;</span>, <span style="color:#e6db74">&#34;url(someFontUrl.woff2)&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fontFile</span>.<span style="color:#a6e22e">load</span>().<span style="color:#a6e22e">then</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">fontface</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 打印值是 &#39;Some Font Name&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">fontface</span>.<span style="color:#a6e22e">family</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a class="flex w-1/2 items-center p-6 pr-3 no-underline" href="/posts/145/"
+      ><span class="mr-1.5">←</span><span>前端工具库 Radash，取代 Lodash</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/143/"
+      ><span>如何实现页面刷新后不定位到之前的滚动位置？</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

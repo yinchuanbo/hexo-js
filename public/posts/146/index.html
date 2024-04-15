@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready text-sm lg:text-base"
+  style="--bg: "
+  lang="en"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>抓包工具 - whistle - 灏天阁</title>
+
+  
+  <meta name="theme-color" />
+  
+  <meta name="description" content="前言 好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。
+whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。
+安装&amp;使用 安装与启动 whistle npm install -g whistle w2 start // 启动whistle w2 stop //停止whistle` 启动之后会在本机启动一台服务器，默认端口是 8899
+在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 -n yourusername -w yourpassword
+浏览器代理插件 在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。
+官方推荐的插件是SwitchyOmega，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。
+安装完成之后浏览器的工具栏内就会出现一个圆圈图标。
+我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。
+这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。
+注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。
+配置证书 虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。" />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/main.min.css" />
+
+  
+
+  
+  
+  
+    
+  
+  <link
+    rel="preload"
+    as="image"
+    href="/theme.png"
+  />
+
+  
+  
+  
+  <link rel="preload" as="image" href="/imgs/logo.png" />
+  
+  
+
+  
+
+  
+  <link rel="icon" href="/img/ico.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  
+  <meta name="generator" content="Hugo 0.108.0">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="抓包工具 - whistle" />
+<meta property="og:description" content="前言 好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。
+whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。
+安装&amp;使用 安装与启动 whistle npm install -g whistle w2 start // 启动whistle w2 stop //停止whistle` 启动之后会在本机启动一台服务器，默认端口是 8899
+在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 -n yourusername -w yourpassword
+浏览器代理插件 在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。
+官方推荐的插件是SwitchyOmega，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。
+安装完成之后浏览器的工具栏内就会出现一个圆圈图标。
+我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。
+这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。
+注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。
+配置证书 虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/146/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-14T19:45:03+08:00" />
+<meta property="article:modified_time" content="2024-04-14T19:45:03+08:00" />
+
+  
+  <meta itemprop="name" content="抓包工具 - whistle">
+<meta itemprop="description" content="前言 好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。
+whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。
+安装&amp;使用 安装与启动 whistle npm install -g whistle w2 start // 启动whistle w2 stop //停止whistle` 启动之后会在本机启动一台服务器，默认端口是 8899
+在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 -n yourusername -w yourpassword
+浏览器代理插件 在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。
+官方推荐的插件是SwitchyOmega，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。
+安装完成之后浏览器的工具栏内就会出现一个圆圈图标。
+我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。
+这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。
+注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。
+配置证书 虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。"><meta itemprop="datePublished" content="2024-04-14T19:45:03+08:00" />
+<meta itemprop="dateModified" content="2024-04-14T19:45:03+08:00" />
+<meta itemprop="wordCount" content="287">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="抓包工具 - whistle"/>
+<meta name="twitter:description" content="前言 好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。
+whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。
+安装&amp;使用 安装与启动 whistle npm install -g whistle w2 start // 启动whistle w2 stop //停止whistle` 启动之后会在本机启动一台服务器，默认端口是 8899
+在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码 -n yourusername -w yourpassword
+浏览器代理插件 在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。
+官方推荐的插件是SwitchyOmega，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。
+安装完成之后浏览器的工具栏内就会出现一个圆圈图标。
+我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。
+这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。
+注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。
+配置证书 虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。"/>
+
+  
+  
+</head>
+  <body class="text-black duration-200 ease-out dark:text-white">
+    
+    
+
+    
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-20 dark:prose-invert"
+      id="main"
+    >
+      
+
+<article>
+  <header class="mb-10">
+    <h1 class="!my-0 pb-2.5">
+      抓包工具 - whistle
+    </h1>
+
+    
+    <div class="text-sm opacity-60">
+      
+      <time>Apr 14, 2024</time>
+      
+      
+      <span class="mx-1">&middot;</span>
+      <span>Yin灏</span>
+    </div>
+    
+  </header>
+
+  <section><h2 id="前言">前言</h2>
+<p>好多人认为 whistle 是抓包工具，殊不知抓包只是 whistle 能力的冰山一角。除了抓包外，它还能修改请求与响应、真机调试 h5 移动端、解决跨域、域名映射等等等。总而言之，使用 whistle 能够提升我们的开发效率，改善开发体验。</p>
+<p>whistle 一出手就是抓包工具的极限，那年它双手插兜不知道什么是对手（doge）。</p>
+<h2 id="安装使用">安装&amp;使用</h2>
+<h3 id="安装与启动-whistle">安装与启动 whistle</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">npm</span> <span style="color:#a6e22e">install</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">g</span> <span style="color:#a6e22e">whistle</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">w2</span> <span style="color:#a6e22e">start</span> <span style="color:#75715e">// 启动whistle
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">w2</span> <span style="color:#a6e22e">stop</span> <span style="color:#75715e">//停止whistle`
+</span></span></span></code></pre></div><p>启动之后会在本机启动一台服务器，默认端口是 8899</p>
+<img src="/img/146/01.awebp" />
+<p>在本机打开该地址会进入 whistle 的控制面板，如下图所示。抓包，修改请求和响应的内容都是在这个控制面板内进行配置的。<em>如果要防止其他人访问配置页面，可以在启动时加上登录用户名和密码</em> <em><code>-n yourusername -w yourpassword</code></em></p>
+<img src="/img/146/02.awebp" />
+<h3 id="浏览器代理插件">浏览器代理插件</h3>
+<p>在启动本地启动了 whistle 之后，要抓包网络的请求并不会经过 whistle，这时候我们就需要安装一个插件，让目标网站的请求经过 whistle 完成抓包等后续的操作。</p>
+<p>官方推荐的插件是<a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif">SwitchyOmega</a>，如果你使用的谷歌浏览器需要在应用商店翻墙进行下载。如果不想翻墙可以直接使用自带的 edge 浏览器，在 edge 的应用商店下载可以免翻墙。点击获取即可轻松下载。</p>
+<img src="/img/146/03.awebp" />
+<p>安装完成之后浏览器的工具栏内就会出现一个圆圈图标。</p>
+<img src="/img/146/04.awebp" />
+<p>我们进入选项界面对浏览器代理进行配置，把代理服务器填写 whistle 启动的端口和地址，然后把 switchyOmega 的选项改为 proxy 服务器代理就完成了。</p>
+<img src="/img/146/05.awebp" />
+<p>这时候在浏览器内打开想要抓包的网站就可以抓包了。目前只可以抓 http 的请求，因为我们还没有进行证书配置，如何配置证书后面会说。</p>
+<img src="/img/146/06.awebp" />
+<p>注意如果使用 edge 下载的插件就只能在 edge 插件内进行抓包，如果在谷歌打开网站，并不会有抓包的信息。</p>
+<h3 id="配置证书">配置证书</h3>
+<p>虽然现在在 whistle 的 network 内打印出了一些信息，但全部都是 http 的请求，并没有 https 的请求，这是因为我们没有配置证书。配置证书方法如下，点击二维码进行证书下载（没错这个二维码是可以点击的，绷住了），随后跟着步骤走就行了。</p>
+<p>安装证书请参考文档: <a href="https://wproxy.org/whistle/webui/https.html">wproxy.org/whistle/web…</a></p>
+<p>配置成功的话 https 这块会变成一个对勾。</p>
+<img src="/img/146/07.awebp" />
+<p>配置完证书之后再次刷新页面，就可以看到所有的 https 请求了，可以清晰的看到请求体和响应体的内容</p>
+<img src="/img/146/08.awebp" />
+<h3 id="手机抓包">手机抓包</h3>
+<p>首先抓包的前提是手机和电脑要处于一个网络下。关闭电脑端的防火墙，然后在手机的 wifi 设置中，把 WiFi 的代理模式设置为手动代理，主机名和端口号是 电脑的 ip 地址+whistle 的端口号。ip 地址可以通过终端的 ipconfig 查询。</p>
+<img src="/img/146/09.awebp" />
+<p>配置完之后手机发送的请求在 whistle 的 network 列表中就能看到了。在手机端访问一下掘金的官网。</p>
+<img src="/img/146/10.awebp" />
+<p>在工具栏这块可以通过 settings 选项对请求进行过滤。可以在 whistle 中看到手机端访问的列表数据。</p>
+<img src="/img/146/11.awebp" />
+<h2 id="应用场景">应用场景</h2>
+<p>whistle 的强大远远不止能够抓包这么简单，它还有很多其他的功能。</p>
+<h3 id="weinre-控制台">Weinre 控制台</h3>
+<blockquote>
+<p>集成<a href="http://people.apache.org/~pmuellr/weinre/docs/latest/">weinre</a>的功能，用户只需通过简单配置(<code>pattern weinre://id</code>)即可使用，具体参见<a href="https://wproxy.org/whistle/rules/weinre.html">weinre</a>，更多移动端调试方法可以参考：<a href="http://imweb.io/topic/5981a34bf8b6c96352a59401">利用 whistle 调试移动端页面</a>。</p>
+</blockquote>
+<p>相信有过 h5 开发经历的同学都遇到过这种情况，我电脑 f12 模拟移动端调试的时候非常的完美，但是一到真机上会出现各种奇奇怪怪的问题，而这些问题往往是比较难以定位问题并修复的，因为在真机的 h5 页面上没有控制台，我们无法审查元素。</p>
+<p>但是当你使用了 whistle 你会发现只需要配置一行规则，就可以轻松的调出控制台调试真机的 h5 页面，这就是 Weinre 控制台。具体效果如下图，这里为了方便展示，真机调试就用 pc 端模拟手机代替（真实调试的时候，需要先实现上述的手机抓包，即手机电脑在同一网络下，并且修改手机 wifi 的代理。）。可以看到左侧并不是浏览器自带的控制台，而是 whistle 自带的功能，在视察与修改左侧元素时，我们手机上的内容也会随之改变。</p>
+<img src="/img/146/12.awebp" />
+<p>那么如何实现上面的效果呢？</p>
+<p>我们只需要在 Whistle 控制台左侧的 Rules 中添加一条规则即可。</p>
+<p><code>${监听的网址} weinre://${实例名称}</code> 这个实例名称是工具栏中 Weinre 下拉框中的名字可以任意起</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">https</span><span style="color:#f92672">:</span><span style="color:#75715e">//juejin.cn/ weinre://juejin
+</span></span></span></code></pre></div><p>点击工具栏中 Weinre 下面的 juejin 即可跳转到 Weinre 控制台页面，再刷新下监听网址的页面即可审查元素。</p>
+<img src="/img/146/13.awebp" />
+<p>借助 Weinre 控制台，我们可以更加容易的解决真机兼容性问题。</p>
+<h3 id="篡改响应">篡改响应</h3>
+<p>修改响应体还是很常用的，例如修复 bug 的时候，如果怀疑是接口返回值有误导致的问题，就可以通过修改响应体，来排查到底是不是后端的问题。</p>
+<p>在调试接口的时候，例如后端接口新增了一个返回值，我们需要根据这个返回值进行相应的逻辑处理，这时候我们也可以通过修改响应体的方式 mock 一下新增的字段，只要确保自己 mock 的结果和接口返回的结构一样，就可以提前完成接口联调。</p>
+<p>具体做法：</p>
+<p>前半段是请求地址（支持正则匹配） 后半段是响应体的文件。<code>file://${路径}</code> 默认找的是 Values 下文件。</p>
+<p><code>Ctrl+右键</code>点击橘色的路径，会自动跳转到 Values 下对应的文件里，如果没有会自动创建非常方便。</p>
+<img src="/img/146/14.awebp" />
+<p>mock.json</p>
+<img src="/img/146/15.awebp" />
+<p>可以看到 加完配置之后对应接口的响应体就变成了 mock.json 里面的内容。</p>
+<img src="/img/146/16.awebp" />
+<h3 id="解决跨域">解决跨域</h3>
+<p>解决跨域是篡改响应的一种应用，有的后端接口没有配置 CORS，导致前端接口跨域</p>
+<p>历史解决：通过 vite 或者 webpack 等工具做一个反向代理</p>
+<p>通过 Whistle 的<code>resHeaders</code> 可直接修改跨域接口的响应头，增加 cors 配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/getList/ resHeaders://<span style="color:#f92672">{</span>cors<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cors 文件</span>
+</span></span><span style="display:flex;"><span>access-control-allow-credentials: true always
+</span></span><span style="display:flex;"><span>access-control-allow-headers: *
+</span></span><span style="display:flex;"><span>access-control-allow-methods: GET, PUT, POST, DELETE, HEAD, OPTIONS
+</span></span><span style="display:flex;"><span>access-control-allow-origin: *
+</span></span><span style="display:flex;"><span>access-control-expose-headers: *
+</span></span><span style="display:flex;"><span>access-control-max-age: 18000L
+</span></span><span style="display:flex;"><span>content-type: application/json
+</span></span><span style="display:flex;"><span>date: Fri, <span style="color:#ae81ff">02</span> Dec <span style="color:#ae81ff">2022</span> 04:00:28 GMT
+</span></span><span style="display:flex;"><span>server: <span style="color:#ae81ff">123123</span>
+</span></span><span style="display:flex;"><span>Access-Control-Allow-Origin: *
+</span></span></code></pre></div><p>当然功能远不止这些，还可以 篡改 API 响应时间、HTTP 响应状态码等。。。</p>
+<h3 id="篡改请求">篡改请求</h3>
+<p>可以使用 reqMerge 修改修改请求体，它会把<code>merge.json</code>文件的请求体合并到原本接口的请求体中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/savePerson/ reqMerge://<span style="color:#f92672">{</span>merge.json<span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># merge.json</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span> name:<span style="color:#e6db74">&#39;张三&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span></code></pre></div><h3 id="jsprepend-进行-js-注入">jsPrepend 进行 js 注入</h3>
+<p>使用 jsPrepend 可以在目标网址的 srcipt 中添加任意的 js 代码。我们这里向页面中注入一个 Vconsole 移动端调试工具。<code>${注入到哪个地址} jsPrepend://${注入的js路径}</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://juejin.cn/ jsPrepend://https://cdn.jsdelivr.net/npm/eruda@2.4.1/eruda.min.js
+</span></span><span style="display:flex;"><span>https://juejin.cn/ jsPrepend://<span style="color:#f92672">{</span>test.js<span style="color:#f92672">}</span>
+</span></span></code></pre></div><p>test.js</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vConsole</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> window.<span style="color:#a6e22e">VConsole</span>();
+</span></span></code></pre></div><p>打开控制台可以发现，我们注入的 js 被添加到了 head 的最顶部。</p>
+<img src="/img/146/17.awebp" />
+<p>VConsole 成功显示到了页面上</p>
+<img src="/img/146/18.awebp" />
+<h3 id="域名映射">域名映射</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 可以一个ip 配置多个域名 并且支持端口号</span>
+</span></span><span style="display:flex;"><span>127.0.0.1:9000 ddd.com aaa.com
+</span></span></code></pre></div><h2 id="文档">文档</h2>
+<p><a href="https://wproxy.org/whistle/install.html">whistle 文档</a></p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 no-underline"
+      href="/posts/145/"
+      ><span>前端工具库 Radash，取代 Lodash</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+  style="position: relative; z-index: 10;display: none;"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="/">灏天阁</a>
+  </div>
+  <a class="link" href="https://yinchuanbo.github.io/" rel="noopener" target="_blank"
+    >Powered by YinHao</a
+  >️ ▷
+</footer>
+
+
+    <div class="img__mask" style="display: none;">
+      <img src="" alt="">
+      <span class="close_btn"></span>
+    </div>
+
+    <script>
+      const imgs = document.images;
+      const imgMask = document.querySelector('.img__mask')
+      const closeBtn = document.querySelector('.close_btn')
+      for (let i = 0; i < imgs.length; i++) {
+        const element = imgs[i];
+        element.onclick = () => {
+          const src = element.src;
+          imgMask.style.display = 'flex';
+          imgMask.querySelector('img').src = src;
+        }
+      }
+      closeBtn.onclick = () => {
+        imgMask.style.display = 'none';
+      }
+    </script>
+  </body>
+</html>
