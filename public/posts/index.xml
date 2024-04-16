@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 Apr 2024 19:45:03 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Apr 2024 16:55:53 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浏览器保存密码后自动填充问题</title>
+      <link>/posts/147/</link>
+      <pubDate>Tue, 16 Apr 2024 16:55:53 +0800</pubDate>
+      
+      <guid>/posts/147/</guid>
+      <description>版本中只使用一个 hidden-input 不生效了，尝试在加一个 hidden-input 就可以了:
+&amp;lt;!--在页面中如果没有type=password的input，那么使用这种方法100%有效--&amp;gt; &amp;lt;div class=&amp;#34;hidden-input&amp;#34;&amp;gt;&amp;lt;input type=&amp;#34;text&amp;#34; class=&amp;#34;form-control&amp;#34; /&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;hidden-input&amp;#34;&amp;gt;&amp;lt;input type=&amp;#34;password&amp;#34; class=&amp;#34;form-control&amp;#34; /&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; autocomplete=&amp;#34;off&amp;#34; class=&amp;#34;form-control bg-transparent&amp;#34; placeholder=&amp;#34;提现地址&amp;#34; /&amp;gt; .hidden-input { position: relative; width: 0; height: 0; overflow: hidden; } /*让input看不见，而不是直接display: none，如果直接display: none，则不生效*/ .hidden-input .form-control { position: absolute; left: -1000px; } </description>
+    </item>
+    
     <item>
       <title>抓包工具 - whistle</title>
       <link>/posts/146/</link>
